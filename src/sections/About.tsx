@@ -12,6 +12,7 @@ import GithubIcon from "@/assets/icons/github.svg";
 import TailwindIcon from "@/assets/icons/tailwind.svg";
 import TypescriptIcon from "@/assets/icons/typescript.svg";
 import NextjsIcon from "@/assets/icons/nextjs.svg";
+import GsapIcon from "@/assets/icons/gsap.svg";
 import GitIcon from "@/assets/icons/git.svg";
 import { TechIcon } from "@/components/TechIcon";
 import mapImage from "@/assets/images/map.png";
@@ -29,6 +30,7 @@ const toolboxItems = [
   { title: "React", iconType: ReactIcon },
   { title: "Typescript", iconType: TypescriptIcon },
   { title: "Next.js", iconType: NextjsIcon },
+  { title: "GSAP", iconType: GsapIcon },
   { title: "Git", iconType: GitIcon },
   { title: "Github", iconType: GithubIcon },
 ];

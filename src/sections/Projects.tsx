@@ -1,6 +1,7 @@
 import rezervacije from "@/assets/images/rezervacije.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+// import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
+import xora from "@/assets/images/xora.png";
+import cocktails from "@/assets/images/cocktails.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -22,28 +23,30 @@ const portfolioProjects = [
     image: rezervacije,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "XORA",
+    year: "2024",
+    title: "XORA SaaS",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Povećana prodaja za 20%" },
+      { title: "Povećan domen korisnika za 30%" },
+      { title: "Veći broj korisnika na mobilnim uređajima" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://demoxora.netlify.app/",
+    image: xora,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "Velvet Pour",
+    year: "2024",
+    title: "Landing Page",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Svaki naš koktel je autorsko iskustvo u čaši" },
+      {
+        title: "Rezervacija online, bez poziva.",
+      },
+      { title: "Doživi noć po svom ukusu" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://velvetpour.netlify.app/",
+    image: cocktails,
   },
 ];
 
