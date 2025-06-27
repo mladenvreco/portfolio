@@ -1,3 +1,4 @@
+"use client";
 import Head from "next/head";
 import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
@@ -7,8 +8,10 @@ import { AboutSection } from "@/sections/About";
 // import { TestimonialsSection } from "@/sections/Testimonials";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
+import { useState } from "react";
 
 export default function Home() {
+  const [lang, setLang] = useState<"sr" | "en">("sr");
   return (
     <>
       <Head>
@@ -32,14 +35,14 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <div>
-        <Header />
-        <HeroSection />
-        <ProjectsSection />
-        <TapeSection />
+        <Header lang={lang} />
+        <HeroSection lang={lang} onSetLang={setLang} />
+        <ProjectsSection lang={lang} />
+        <TapeSection lang={lang} />
         {/* <TestimonialsSection /> */}
-        <AboutSection />
-        <ContactSection />
-        <Footer />
+        <AboutSection lang={lang} />
+        <ContactSection lang={lang} />
+        <Footer lang={lang} />
       </div>
     </>
   );

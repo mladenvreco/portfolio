@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Image from "next/image";
 import memojiImage from "@/assets/images/memoji-computer.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
@@ -6,14 +7,54 @@ import StarIcon from "@/assets/icons/star.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 
-export const HeroSection = () => {
+export const HeroSection = ({
+  lang,
+  onSetLang,
+}: {
+  lang: string;
+  onSetLang: Function;
+}) => {
+  const t = {
+    title:
+      lang === "sr" ? (
+        "Elegantna rješenja za složene zahtjeve"
+      ) : (
+        <>
+          Complex ideas.
+          <br />
+          Simple results.
+        </>
+      ),
+    desc:
+      lang === "sr"
+        ? "Dizajniram i izrađujem brze, funkcionalne web aplikacije i web sajtove. Spreman sam za nove projekte. Javite se!"
+        : "I design and develop fast, reliable web applications. Let's create something exceptional — get in touch!",
+    available:
+      lang === "sr" ? "Dostupan za saradnju" : "Available for collaboration",
+    viewWork: lang === "sr" ? "Pogledajte Moj Rad" : "View My Work",
+    contactMe: lang === "sr" ? "Kontaktirajte Me" : "Contact Me",
+    alt: lang === "sr" ? "Čovjek iza laptopa" : "Person behind a laptop",
+  };
+
   return (
     <div
       id="pocetna"
       className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
     >
+      {/* Language toggle button - MOVED OUTSIDE the masked div */}
+      <button
+        className="absolute top-16 right-4 z-[9999] bg-gray-900 text-white px-4 py-2 rounded-lg border border-white/20 hover:bg-gray-800 transition flex items-center justify-center min-w-[48px] min-h-[40px] cursor-pointer select-none"
+        onClick={() => onSetLang(lang === "sr" ? "en" : "sr")}
+        aria-label="Promijeni jezik"
+        type="button"
+        style={{ pointerEvents: "auto" }}
+      >
+        {lang === "sr" ? "EN" : "SR"}
+      </button>
+
+      {/* Masked background div - button is now outside this */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
           maskImage:
             "linear-gradient(to bottom, transparent, black 10%, black 70%, transparent)",
@@ -95,7 +136,6 @@ export const HeroSection = () => {
         >
           <SparkleIcon className="size-14 text-emerald-300/20" />
         </HeroOrbit>
-
         <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration={54}>
           <div className="size-3 bg-emerald-300/20 rounded-full"></div>
         </HeroOrbit>
@@ -110,32 +150,28 @@ export const HeroSection = () => {
           <StarIcon className="size-28 text-emerald-300" />
         </HeroOrbit>
       </div>
+
       <div className="container z-10 relative">
         <div className="flex flex-col items-center">
-          <Image
-            src={memojiImage}
-            className="size-[100px]"
-            alt="Čovjek iza laptopa"
-          />
+          <Image src={memojiImage} className="size-[100px]" alt={t.alt} />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping"></div>
             </div>
-            <div className="text-sm font-medium">Dostupan za saradnju</div>
+            <div className="text-sm font-medium">{t.available}</div>
           </div>
           <div className="max-w-lg mx-auto">
             <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
-              Elegantna rješenja za složene zahtjeve
+              {t.title}
             </h1>
             <p className="mt-4 text-center text-white/60 md:text-lg">
-              Dizajniram i izrađujem brze, funkcionalne web aplikacije i web
-              sajtove. Spreman sam za nove projekte. Javite se!
+              {t.desc}
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
             <a href="#projekti">
               <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:bg-white/10 hover:border-white/30 transition duration-300">
-                <span className="font-semibold">Pogledajte Moj Rad</span>
+                <span className="font-semibold">{t.viewWork}</span>
                 <ArrowDown className="size-4" />
               </button>
             </a>
@@ -143,7 +179,7 @@ export const HeroSection = () => {
             <a href="#kontakt">
               <button className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl hover:bg-gray-200 hover:text-gray-800 transition duration-300">
                 <span>👋</span>
-                <span className="font-semibold">Kontaktirajte Me</span>
+                <span className="font-semibold">{t.contactMe}</span>
               </button>
             </a>
           </div>

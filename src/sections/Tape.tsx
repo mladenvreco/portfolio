@@ -1,7 +1,7 @@
 import StarIcon from "@/assets/icons/star.svg";
 import { Fragment } from "react";
 
-const words = [
+const wordsSr = [
   "Visokih performansi",
   "Skalabilan",
   "Siguran",
@@ -17,7 +17,26 @@ const words = [
   "Modularan",
   "Prilagodljiv potrebama",
 ];
-export const TapeSection = () => {
+
+const wordsEn = [
+  "High performance",
+  "Scalable",
+  "Secure",
+  "Accessible",
+  "Adaptable",
+  "Interactive",
+  "Easy to maintain",
+  "Reliable",
+  "Fast loading",
+  "Modern",
+  "Consistent",
+  "Clean design",
+  "Modular",
+  "Customizable",
+];
+
+export const TapeSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
+  const words = lang === "sr" ? wordsSr : wordsEn;
   return (
     <div className="py-16 lg:py-24 overflow-x-clip">
       <div className="bg-gradient-to-r from-emerald-300 to-sky-400 -rotate-3 -mx-1">

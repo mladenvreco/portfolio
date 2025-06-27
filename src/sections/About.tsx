@@ -35,7 +35,7 @@ const toolboxItems = [
   { title: "Github", iconType: GithubIcon },
 ];
 
-const hobbies = [
+const hobbiesSr = [
   { title: "Košarka", emoji: "🏀", left: "5%", top: "5%" },
   { title: "Planinarenje", emoji: "🥾", left: "50%", top: "5%" },
   { title: "Muzika", emoji: "🎵", left: "10%", top: "35%" },
@@ -44,34 +44,70 @@ const hobbies = [
   { title: "Priroda i Društvo", emoji: "🍻", left: "25%", top: "65%" },
 ];
 
-export const AboutSection = () => {
+const hobbiesEn = [
+  { title: "Basketball", emoji: "🏀", left: "5%", top: "5%" },
+  { title: "Hiking", emoji: "🥾", left: "50%", top: "5%" },
+  { title: "Music", emoji: "🎵", left: "10%", top: "35%" },
+  { title: "Movies", emoji: "🎥", left: "35%", top: "40%" },
+  { title: "Skiing", emoji: "⛷️", left: "70%", top: "45%" },
+  { title: "Friends & Nature", emoji: "🍻", left: "25%", top: "65%" },
+];
+
+const aboutText = {
+  sr: {
+    eyebrow: "O meni",
+    title: "Ko stoji iza ekrana",
+    description: "Otkrijte čime se bavim i šta me inspiriše.",
+    card1Title: "Mladen, drago mi je",
+    card1Desc:
+      "Kao web developer, fokusiram se na rješavanje dizajnerskih problema, kreiram pametne korisničke interfejse, zamišljam korisne interakcije i razvijam bogata web iskustva i aplikacije.",
+    card2Title: "Alati koje koristim",
+    card2Desc:
+      "Istražite tehnologije i alate koje koristim za kreiranje digitalnih iskustava.",
+    card3Title: "Iza linija koda",
+    card3Desc: "Kako izgleda moj svijet van ekrana",
+  },
+  en: {
+    eyebrow: "About Me",
+    title: "Who's Behind the Screen",
+    description: "Discover what I do and what inspires me.",
+    card1Title: "Mladen, nice to meet you",
+    card1Desc:
+      "As a web developer, I enjoy solving design problems, creating intuitive user interfaces, imagining meaningful interactions, and building fast, rich web experiences.",
+    card2Title: "Tools I Use",
+    card2Desc:
+      "A look at the tools I rely on to create smooth, scalable digital products.",
+    card3Title: "Behind the Code",
+    card3Desc: "What my world looks like off-screen",
+  },
+};
+
+export const AboutSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
   const constraintRef = useRef(null);
+  const t = aboutText[lang];
+  const hobbies = lang === "sr" ? hobbiesSr : hobbiesEn;
+
   return (
     <div id="o-meni" className="py-20 lg:py-28">
       <div className="container">
         <SectionHeader
-          eyebrow="O meni"
-          title="Ko stoji iza ekrana"
-          description="Otkrijte čime se bavim i šta me inspiriše."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          description={t.description}
         />
 
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader title="Mladen, drago mi je" description="" />
+              <CardHeader title={t.card1Title} description="" />
               <div className="px-6 mx-auto">
-                <p>
-                  Kao web developer, fokusiram se na rješavanje dizajnerskih
-                  problema, kreiram pametne korisničke interfejse, zamišljam
-                  korisne interakcije i razvijam bogata web iskustva i
-                  aplikacije.
-                </p>
+                <p>{t.card1Desc}</p>
               </div>
             </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
-                title="Alati koje koristim"
-                description="Istražite tehnologije i alate koje koristim za kreiranje digitalnih iskustava."
+                title={t.card2Title}
+                description={t.card2Desc}
                 className=""
               />
               <div className="">
@@ -91,8 +127,8 @@ export const AboutSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:grid-cols-3">
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader
-                title="Iza linija koda"
-                description="Kako izgleda moj svijet van ekrana"
+                title={t.card3Title}
+                description={t.card3Desc}
                 className="px-6 py-6"
               />
 
