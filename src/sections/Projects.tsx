@@ -21,7 +21,7 @@ const projectsData = {
         // { title: "Sve rezervacije pregledno na jednom mjestu" },
         // { title: "Pregled prihoda, gostiju i aranžmana" },
       ],
-      link: "https://demorafting.netlify.app/login",
+      link: "https://kampifydemo.netlify.app/pocetna",
       image: rezervacije,
     },
     {
