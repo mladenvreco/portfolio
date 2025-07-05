@@ -10,7 +10,7 @@ import { Card } from "@/components/Card";
 const projectsData = {
   sr: [
     {
-      company: "Rafting Kamp",
+      company: "Kampify",
       year: "2025",
       title: "Vođenje i Evidencija Rezervacija",
       results: [
