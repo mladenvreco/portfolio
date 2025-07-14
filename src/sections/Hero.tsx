@@ -28,7 +28,7 @@ export const HeroSection = ({
     desc:
       lang === "sr"
         ? "Dizajniram i izrađujem brze, funkcionalne web aplikacije i web sajtove. Spreman sam za nove projekte. Javite se!"
-        : "I design and develop fast, reliable web applications. Let's create something exceptional — get in touch!",
+        : "I design and develop fast, reliable web applications. Let's create something exceptional. Get in touch!",
     available:
       lang === "sr" ? "Dostupan za saradnju" : "Available for collaboration",
     viewWork: lang === "sr" ? "Pogledajte Moj Rad" : "View My Work",
@@ -38,7 +38,7 @@ export const HeroSection = ({
 
   return (
     <div
-      id="pocetna"
+      id="home"
       className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
     >
       {/* Language toggle button - MOVED OUTSIDE the masked div */}
@@ -169,14 +169,14 @@ export const HeroSection = ({
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-            <a href="#projekti">
+            <a href="#projects">
               <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:bg-white/10 hover:border-white/30 transition duration-300">
                 <span className="font-semibold">{t.viewWork}</span>
                 <ArrowDown className="size-4" />
               </button>
             </a>
 
-            <a href="#kontakt">
+            <a href="#contact">
               <button className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl hover:bg-gray-200 hover:text-gray-800 transition duration-300">
                 <span>👋</span>
                 <span className="font-semibold">{t.contactMe}</span>

@@ -6,7 +6,7 @@ import { useForm, ValidationError } from "@formspree/react";
 const contactText = {
   sr: {
     heading: "Stojim Vam na raspolaganju.",
-    desc: "Tražite pouzdanog partnera za sledeći projekat? Tu sam da saslušam i pomognem – slobodno se javite!",
+    desc: "Tražite pouzdanog partnera za sledeći projekat? Tu sam da saslušam i pomognem. Slobodno se javite!",
     name: "Ime i prezime",
     namePlaceholder: "Vaše ime i prezime",
     email: "Email",
@@ -22,7 +22,7 @@ const contactText = {
   },
   en: {
     heading: "I'm at your service.",
-    desc: "Looking for a reliable partner for your next project? I'm here to listen and help – feel free to reach out!",
+    desc: "Looking for a reliable partner for your next project? I'm here to listen and help. Feel free to reach out!",
     name: "Full Name",
     namePlaceholder: "Your full name",
     email: "Email",
@@ -43,7 +43,7 @@ export const ContactSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
   const t = contactText[lang];
 
   return (
-    <div id="kontakt" className="py-16 pt-12 lg:py-24 lg:pt-20">
+    <div id="contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
       <div className="container">
         <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-0">
           <div

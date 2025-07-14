@@ -11,7 +11,7 @@ import { Footer } from "@/sections/Footer";
 import { useState } from "react";
 
 export default function Home() {
-  const [lang, setLang] = useState<"sr" | "en">("sr");
+  const [lang, setLang] = useState<"sr" | "en">("en");
   return (
     <>
       <Head>

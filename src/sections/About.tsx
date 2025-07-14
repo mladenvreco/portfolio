@@ -58,7 +58,13 @@ const aboutText = {
     eyebrow: "O meni",
     title: "Ko stoji iza ekrana",
     description: "Otkrijte čime se bavim i šta me inspiriše.",
-    card1Title: "Mladen, drago mi je",
+    card1Title: (
+      <>
+        Mladen,
+        <br />
+        drago mi je.
+      </>
+    ),
     card1Desc:
       "Kao web developer, fokusiram se na rješavanje dizajnerskih problema, kreiram pametne korisničke interfejse, zamišljam korisne interakcije i razvijam bogata web iskustva i aplikacije.",
     card2Title: "Alati koje koristim",
@@ -71,7 +77,7 @@ const aboutText = {
     eyebrow: "About Me",
     title: "Who's Behind the Screen",
     description: "Discover what I do and what inspires me.",
-    card1Title: "Mladen, nice to meet you",
+    card1Title: <>Mladen, nice to meet you</>,
     card1Desc:
       "As a web developer, I enjoy solving design problems, creating intuitive user interfaces, imagining meaningful interactions, and building fast, rich web experiences.",
     card2Title: "Tools I Use",
@@ -88,7 +94,7 @@ export const AboutSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
   const hobbies = lang === "sr" ? hobbiesSr : hobbiesEn;
 
   return (
-    <div id="o-meni" className="py-20 lg:py-28">
+    <div id="about" className="py-20 lg:py-28">
       <div className="container">
         <SectionHeader
           eyebrow={t.eyebrow}

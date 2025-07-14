@@ -6,7 +6,7 @@ export const CardHeader = ({
   description,
   className,
 }: {
-  title: string;
+  title: React.ReactNode;
   description: string;
   className?: string;
 }) => {

@@ -17,17 +17,17 @@ export const Header = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
   return (
     <div className="flex justify-center items-center top-3 fixed w-full z-10">
       <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
-        <a href="#pocetna" className="nav-item">
+        <a href="#home" className="nav-item">
           {nav[lang].home}
         </a>
-        <a href="#projekti" className="nav-item">
+        <a href="#projects" className="nav-item">
           {nav[lang].projects}
         </a>
-        <a href="#o-meni" className="nav-item">
+        <a href="#about" className="nav-item">
           {nav[lang].about}
         </a>
         <a
-          href="#kontakt"
+          href="#contact"
           className="nav-item bg-white text-gray-900 hover:bg-white/70 hover:text-grey-900"
         >
           {nav[lang].contact}

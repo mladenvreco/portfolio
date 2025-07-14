@@ -68,7 +68,7 @@ const projectsData = {
         // { title: "All reservations in one place" },
         // { title: "Overview of income, guests, and arrangements" },
       ],
-      link: "https://demorafting.netlify.app/login",
+      link: "https://kampifydemo.netlify.app/",
       image: rezervacije,
     },
     {
@@ -123,7 +123,7 @@ const sectionHeader = {
 
 export const ProjectsSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
   return (
-    <section id="projekti" className="pb-16 lg:py-24">
+    <section id="projects" className="pb-16 lg:py-24">
       <div className="container">
         <SectionHeader
           eyebrow={sectionHeader[lang].eyebrow}
