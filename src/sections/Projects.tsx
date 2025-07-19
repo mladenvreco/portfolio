@@ -1,6 +1,7 @@
 import rezervacije from "@/assets/images/rezervacije.png";
 import xora from "@/assets/images/xora.png";
 import cocktails from "@/assets/images/cocktails.png";
+import movies from "@/assets/images/movies.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -23,6 +24,21 @@ const projectsData = {
       ],
       link: "https://kampifydemo.netlify.app/pocetna",
       image: rezervacije,
+    },
+    {
+      company: "muddy movies",
+      year: "2022",
+      title: "Pretraživač filmova",
+      results: [
+        {
+          title:
+            "Istražite svoje omiljene filmove i dodajte ih u favorite. Sačuvajte na jednom mestu sve filmove koje volite!",
+        },
+        // { title: "All reservations in one place" },
+        // { title: "Overview of income, guests, and arrangements" },
+      ],
+      link: "https://muddymovies.netlify.app/",
+      image: movies,
     },
     {
       company: "XORA",
@@ -70,6 +86,21 @@ const projectsData = {
       ],
       link: "https://kampifydemo.netlify.app/",
       image: rezervacije,
+    },
+    {
+      company: "muddy movies",
+      year: "2022",
+      title: "Explore movies",
+      results: [
+        {
+          title:
+            "Explore your favorite movies and add them to your favorites. Keep track of the films you love in one place!",
+        },
+        // { title: "All reservations in one place" },
+        // { title: "Overview of income, guests, and arrangements" },
+      ],
+      link: "https://muddymovies.netlify.app/",
+      image: movies,
     },
     {
       company: "XORA",
