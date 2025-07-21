@@ -37,10 +37,10 @@ This portfolio website is built with **React**, **Next.js**, and **TailwindCSS**
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-portfolio-repo.git
+git clone https://github.com/mladenvreco/portfolio.git
 
 # Navigate to the project folder
-cd your-portfolio-repo
+cd portfolio
 
 # Install dependencies
 npm install
