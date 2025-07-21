@@ -1,24 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mladen Vrećo - Personal Portfolio
 
-## Getting Started
+Welcome to my personal portfolio website, built to showcase my projects, skills, and experience as a frontend developer.
 
-First, run the development server:
+## 🔗 Live Demo
+
+👉 [Visit my portfolio](https://vreco.vercel.app/)
+
+## 🚀 About
+
+This portfolio website is built with **React**, **Next.js**, and **TailwindCSS**. It features a modern, responsive design with smooth navigation and highlights my work, including real projects and exercises.
+
+## 🛠️ Technologies Used
+
+- [React](https://reactjs.org/)  
+- [Next.js](https://nextjs.org/)  
+- [TailwindCSS](https://tailwindcss.com/)  
+- Vercel for seamless deployment and hosting
+
+## 📁 Project Structure
+
+/app → main Next.js app folder
+/assets → static assets like images, icons
+/components → reusable React components
+/sections → page sections components 
+
+
+## ✨ Features
+
+- Fully responsive and mobile-friendly  
+- Fast performance with Next.js optimizations  
+- Clean and modern UI with TailwindCSS  
+- Showcases projects with links and descriptions  
+- Contact section with email and social media links  
+
+## ⚙️ Getting Started Locally
 
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/your-portfolio-repo.git
+
+# Navigate to the project folder
+cd your-portfolio-repo
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 to view it in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📌 Notes
+This portfolio is continuously updated as I complete new projects and refine my skills.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-
-
+👨‍💻 Author: Mladen Vrećo
+🌐 Website: https://vreco.vercel.app/
