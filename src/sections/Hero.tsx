@@ -28,7 +28,7 @@ export const HeroSection = ({
     desc:
       lang === "sr"
         ? "Dizajniram i izrađujem brze, funkcionalne web aplikacije i web sajtove. Spreman sam za nove projekte. Javite se!"
-        : "I design and develop fast, reliable web applications. Let's create something exceptional. Get in touch!",
+        : "I design and develop web applications. Let's create something exceptional. Get in touch!",
     available:
       lang === "sr" ? "Dostupan za saradnju" : "Available for collaboration",
     viewWork: lang === "sr" ? "Pogledajte Moj Rad" : "View My Work",
