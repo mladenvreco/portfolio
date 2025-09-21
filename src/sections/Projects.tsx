@@ -25,21 +25,7 @@ const projectsData = {
       link: "https://kampifydemo.netlify.app/pocetna",
       image: rezervacije,
     },
-    {
-      company: "muddy movies",
-      year: "2022",
-      title: "Pretraživač filmova",
-      results: [
-        {
-          title:
-            "Istražite svoje omiljene filmove i dodajte ih u favorite. Sačuvajte na jednom mestu sve filmove koje volite!",
-        },
-        // { title: "All reservations in one place" },
-        // { title: "Overview of income, guests, and arrangements" },
-      ],
-      link: "https://muddymovies.netlify.app/",
-      image: movies,
-    },
+
     {
       company: "XORA",
       year: "2024",
@@ -87,21 +73,7 @@ const projectsData = {
       link: "https://kampifydemo.netlify.app/",
       image: rezervacije,
     },
-    {
-      company: "muddy movies",
-      year: "2022",
-      title: "Explore movies",
-      results: [
-        {
-          title:
-            "Explore your favorite movies and add them to your favorites. Keep track of the films you love in one place!",
-        },
-        // { title: "All reservations in one place" },
-        // { title: "Overview of income, guests, and arrangements" },
-      ],
-      link: "https://muddymovies.netlify.app/",
-      image: movies,
-    },
+
     {
       company: "XORA",
       year: "2024",

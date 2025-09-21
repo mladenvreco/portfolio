@@ -2,6 +2,7 @@
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { useForm, ValidationError } from "@formspree/react";
+import { useState } from "react";
 
 const contactText = {
   sr: {
@@ -19,6 +20,9 @@ const contactText = {
     prefixName: "Ime",
     prefixEmail: "Email",
     prefixMessage: "Poruka",
+    errorName: "Ime je obavezno.",
+    errorEmail: "Email je obavezan.",
+    errorMessage: "Poruka je obavezna.",
   },
   en: {
     heading: "I'm at your service.",
@@ -35,12 +39,48 @@ const contactText = {
     prefixName: "Name",
     prefixEmail: "Email",
     prefixMessage: "Message",
+    errorName: "Name is required.",
+    errorEmail: "Email is required.",
+    errorMessage: "Message is required.",
   },
 };
 
 export const ContactSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
   const [state, handleSubmit] = useForm("xgvkpozq");
   const t = contactText[lang];
+  const [errors, setErrors] = useState<string[]>([]);
+
+  const customSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get("name")?.toString().trim();
+    const email = formData.get("email")?.toString().trim();
+    const message = formData.get("message")?.toString().trim();
+
+    const newErrors: string[] = [];
+
+    if (!name || name.trim().length === 0) {
+      newErrors.push(t.errorName);
+    }
+    if (!email || email.trim().length === 0) {
+      newErrors.push(t.errorEmail);
+    }
+    if (!message || message.trim().length === 0) {
+      newErrors.push(t.errorMessage);
+    }
+
+    if (newErrors.length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors([]);
+
+    handleSubmit(e);
+  };
 
   return (
     <div id="contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
@@ -63,7 +103,7 @@ export const ContactSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
                   {t.thanks}
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={customSubmit} className="flex flex-col gap-4">
                   <div>
                     <label
                       htmlFor="name"
@@ -77,7 +117,6 @@ export const ContactSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
                       name="name"
                       className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400"
                       placeholder={t.namePlaceholder}
-                      required
                     />
                     <ValidationError
                       prefix={t.prefixName}
@@ -99,7 +138,6 @@ export const ContactSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
                       name="email"
                       className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400"
                       placeholder={t.emailPlaceholder}
-                      required
                     />
                     <ValidationError
                       prefix={t.prefixEmail}
@@ -121,8 +159,14 @@ export const ContactSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
                       rows={4}
                       className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400"
                       placeholder={t.messagePlaceholder}
-                      required
                     ></textarea>
+                    {errors.length > 0 && (
+                      <ul className="text-sm">
+                        {errors.map((err, idx) => (
+                          <li key={idx}>{err}</li>
+                        ))}
+                      </ul>
+                    )}
                     <ValidationError
                       prefix={t.prefixMessage}
                       field="message"
