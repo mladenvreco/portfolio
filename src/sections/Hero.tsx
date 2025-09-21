@@ -15,19 +15,11 @@ export const HeroSection = ({
   onSetLang: Function;
 }) => {
   const t = {
-    title:
-      lang === "sr" ? (
-        "Elegantna rješenja za složene zahtjeve"
-      ) : (
-        <>
-          Complex ideas.
-          <br />
-          Simple results.
-        </>
-      ),
+    title: "Mladen Vrećo",
+
     desc:
       lang === "sr"
-        ? "Dizajniram i izrađujem brze, funkcionalne web aplikacije i web sajtove. Spreman sam za nove projekte. Javite se!"
+        ? "Dizajniram i razvijam funkcionalne web aplikacije i sajtove. Otvoren za nove projekte. Javite se!"
         : "I design and develop web applications. Let's create something exceptional. Get in touch!",
     available:
       lang === "sr" ? "Dostupan za saradnju" : "Available for collaboration",
