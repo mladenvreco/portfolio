@@ -122,10 +122,10 @@ export const AboutSection = ({ lang = "sr" }: { lang?: "sr" | "en" }) => {
                   itemsWrapperClassName="animate-move-left"
                 />
               </div>
-              <div className="mt-4">
+              <div className="mt-2">
                 <ToolboxItems
                   items={toolboxItems}
-                  itemsWrapperClassName="animate-move-right [animation-duration:15s]"
+                  itemsWrapperClassName="animate-move-right [animation-duration:10s]"
                 />
               </div>
             </Card>
